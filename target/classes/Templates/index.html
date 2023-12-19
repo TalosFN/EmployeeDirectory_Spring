@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head >
+  <link rel="stylesheet" th:href="@{/style.css}">
+	<meta charset="UTF-8">
+	<title>Работник</title>
+	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="d-flex justify-content-center align-items-center">
+<div>
+	<span class="font-weight-bold">Id: </span><span th:text="${employee.getId()}">VALUE</span> <br>
+	<span class="font-weight-bold">Name: </span><span th:text="${employee.getName()}">VALUE</span> <br>
+	<span class="font-weight-bold">Surname: </span><span th:text="${employee.getSurname()}">VALUE</span><br>
+	<span class="font-weight-bold">Department: </span><span th:text="${employee.getDepartment()}">VALUE</span><br>
+	
+	<a class="btn btn-secondary" th:href="@{/employee}">Go Back</a>
+    <a class="btn btn-primary" th:href="@{/employee/{id}/edit(id=${employee.getId()})}">Edit</a>
+    <button class="btn btn-danger" type="submit">Delete</button>
+	
+	<form th:method="POST" th:action="@{/employee/{id}/delete(id=${employee.getId()})}">
+    
+    </form>
+   
+   </div>
+   </div>
+</body>
+</html>

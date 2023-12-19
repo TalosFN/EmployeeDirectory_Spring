@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/style.css}">
+    <meta charset="UTF-8">
+    <title>Update employee</title>
+   <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="d-flex justify-content-center align-items-center">
+<form th:method="POST" th:action="@{/employee/{id}(id=${employee.getId()})}" th:object="${employee}">
+    <label for="name">Enter name: </label><br>
+    <input type="text" th:field="*{name}" id="name"/><br>
+    <label for="name">Enter name: </label><br>
+    <input type="text" th:field="*{surname}" id="surname"/><br>
+    <label for="name">Enter name: </label><br>
+    <input type="text" th:field="*{phoneNumber}" id="phoneNumber"/><br>
+    <label for="name">Enter name: </label><br>
+    <input type="text" th:field="*{department}" id="department"/><br>
+    <div class="div">
+    <a class="btn btn-secondary" th:href="@{/employee/{id}(id=${employee.getId()})}">Go back</a>
+    <input class="btn btn-primary" type="submit" value="Update!"/>
+    </div>
+</form>
+
+</div>
+
+</body>
+</html>

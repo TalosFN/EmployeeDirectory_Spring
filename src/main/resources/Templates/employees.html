@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/style.css}">
+	<meta charset="UTF-8">
+	<title>Все работники</title>
+	
+</head>
+<body>
+<div class="margin">
+	<a class="btn btn-primary marg"  th:href="@{/employee/new}">Add employee</a>
+	<h2 class="mb-md-3">All employees:</h2>
+	
+	<div class="card mb-md-3"  th:each="employee : ${employees}">
+		<a class="card-body" th:href="@{/employee/{id}(id=${employee.getId()})}" th:text="${employee.getName()}+' '+${employee.getSurname()}">employee</a>
+	</div>
+	</div>
+	
+	
+</body>
+</html>
